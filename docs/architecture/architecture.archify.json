@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "spring-ai-secure-rag — architecture",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1090,
+      540
+    ],
+    "repository": {
+      "url": "https://github.com/murillo-consulting/spring-ai-secure-rag",
+      "revision": "c36476d569267d8bc3855a420a795c5cd7478aa3",
+      "provider": "github"
+    }
+  },
+  "components": [
+    {
+      "id": "component-0",
+      "type": "security",
+      "label": "Identité HTTP",
+      "sublabel": "Adaptateur local par en-têtes",
+      "pos": [
+        50,
+        65
+      ],
+      "size": [
+        235,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/dev/anvium/securerag/config/TenantIdentityFilter.java",
+          "line": 17,
+          "end_line": 25
+        }
+      ]
+    },
+    {
+      "id": "component-1",
+      "type": "backend",
+      "label": "API RAG",
+      "sublabel": "Documents et questions",
+      "pos": [
+        425,
+        65
+      ],
+      "size": [
+        235,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/dev/anvium/securerag/api/RagController.java",
+          "line": 16,
+          "end_line": 24
+        }
+      ]
+    },
+    {
+      "id": "component-2",
+      "type": "backend",
+      "label": "SecureRagService",
+      "sublabel": "ACL et sélection des preuves",
+      "pos": [
+        800,
+        65
+      ],
+      "size": [
+        235,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/dev/anvium/securerag/service/SecureRagService.java",
+          "line": 65,
+          "end_line": 73
+        }
+      ]
+    },
+    {
+      "id": "component-3",
+      "type": "database",
+      "label": "SimpleVectorStore",
+      "sublabel": "Index en mémoire",
+      "pos": [
+        800,
+        365
+      ],
+      "size": [
+        235,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/dev/anvium/securerag/config/RagConfiguration.java",
+          "line": 21,
+          "end_line": 23
+        }
+      ]
+    },
+    {
+      "id": "component-4",
+      "type": "backend",
+      "label": "Réponse citée",
+      "sublabel": "Extraits ou abstention",
+      "pos": [
+        425,
+        365
+      ],
+      "size": [
+        235,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/dev/anvium/securerag/service/SecureRagService.java",
+          "line": 82,
+          "end_line": 90
+        }
+      ]
+    },
+    {
+      "id": "component-5",
+      "type": "backend",
+      "label": "Embeddings locaux",
+      "sublabel": "Hachage déterministe",
+      "pos": [
+        50,
+        365
+      ],
+      "size": [
+        235,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/dev/anvium/securerag/config/RagConfiguration.java",
+          "line": 16,
+          "end_line": 23
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "edge-0-1",
+      "from": "component-0",
+      "to": "component-1",
+      "label": "identité"
+    },
+    {
+      "id": "edge-1-2",
+      "from": "component-1",
+      "to": "component-2",
+      "label": "appelle"
+    },
+    {
+      "id": "edge-2-3",
+      "from": "component-2",
+      "to": "component-3",
+      "label": "recherche",
+      "labelDy": 60
+    }
+  ]
+}

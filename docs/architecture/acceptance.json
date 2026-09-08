@@ -1,0 +1,43 @@
+{
+  "diagram_type": "architecture",
+  "renderer": "Archify 2.17",
+  "source_revision": "c36476d569267d8bc3855a420a795c5cd7478aa3",
+  "specification": {
+    "sha256": "1365154d100f3627b7028842335c3942859c89088323c3705f7c32decf2c614f",
+    "bytes": 3514
+  },
+  "artifact": {
+    "sha256": "d64efbdf3863d07a7e6cff4eb5434ff85c71499eb2a7ea8243704442a09b427c",
+    "bytes": 801190
+  },
+  "validation": {
+    "checksPassed": 9,
+    "checkCount": 9,
+    "compositionProfile": "showcase",
+    "compositionStatus": "pass",
+    "errors": 0,
+    "warnings": 0
+  },
+  "browser_evidence": "passed",
+  "browser_viewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      1600,
+      1000
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      2048,
+      1320
+    ]
+  ],
+  "visual_review": "passed",
+  "visual_review_scope": "Image-capable review of READ/Still light and dark screenshots at 1440x900 and 2048x1320: node/text fit, route labels, no crossings, balanced composition. Interactive controls and exports not manually exercised.",
+  "correction_rounds": 1
+}

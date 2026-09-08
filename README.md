@@ -89,3 +89,7 @@ The repository uses Spring Boot 4.1.0, Spring AI 2.0.0, Java 21, locked containe
 ## License
 
 MIT
+
+## Architecture interactive
+
+[Carte Archify et sources vérifiées](docs/architecture/README.md).
